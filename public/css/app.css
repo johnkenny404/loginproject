@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#Nav{
+    background-color: #f7fafc;
+}
+.space-top{
+    margin-top: 250px;
+    background: #f7fafc;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
