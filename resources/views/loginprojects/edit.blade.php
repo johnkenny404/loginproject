@@ -42,11 +42,11 @@
                     <h1 class="heading">Update Bio-Data</h1>
                     <div class="form-group">
                         <labeb>Upload Images</label>
-                        <input type="file" name="image" class="mt-2 font-weight-bold">
+                        <input type="file" name="image" value="{{ $loginproject -> image_path}}" class="mt-2 font-weight-bold">
                     </div>
                     <div class="form-group">
                         <label for="fullName">full Name</label>
-                        <input type="text" name="fullname" value="{{ $loginproject -> fullname }}" placeholder="Enter Full Name" class="form-control">
+                        <input type="text" name="fullname" value="{{ $loginproject -> fullname }}"  class="form-control">
                         @error('fullname')
                           <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -60,21 +60,21 @@
                     </div>
                     <div class="form-group">
                         <label for="Location">Location</label>
-                        <input type="location" name="location" value="{{$loginproject->location}}" class="form-control" placeholder="Location">
+                        <input type="location" name="location" value="{{$loginproject->location}}" class="form-control" >
                         @error('location')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="Experience">Experience</label>
-                        <input type="number" name="experience" value="{{$loginproject -> experience}}" class="form-control" placeholder="Experience">
+                        <input type="number" name="experience" value="{{$loginproject -> experience}}" class="form-control">
                         @error('experience')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="Experience">Degree</label>
-                        <input type="Text" name="degree" value="{{$loginproject -> degree}}" class="form-control" placeholder="Degree">
+                        <input type="Text" name="degree" value="{{$loginproject -> degree}}" class="form-control" >
                         @error('degree')
                           <div class="alert alert-danger">{{ $message }}</div>
                         @enderror

@@ -109,20 +109,11 @@ class LoginprojectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            // "image" => "required|mimes:jpg,png,jpeg|max:1999",
-            "fullname" => "required",
-            "age" => "required|integer|min:0",
-            "location" => "required|string",
-            "experience" => "required|integer|min:0",
-            "degree" => "required|string",
-            "image" => "required|mimes:jpg,png,jpeg|max:1999"
-            ]);
+        $newImageName = time(). '-'. $request->name. '.'.
+        $request->image->extension();
 
-            $newImageName = time(). '-'. $request->name. '.'.
-            $request->image->extension();
+        $request->image->move(public_path('images'), $newImageName);
 
-            $request->image->move(public_path('images'), $newImageName);
 
 
         $loginproject = loginproject::where('id', $id)

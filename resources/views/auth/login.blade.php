@@ -9,6 +9,24 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="Nav">
+        <div class="container">
+            <nav class="navbar navbar-light ">
+                <div class="container-fluid">
+                    <a class="navbar-brand">Loginproject</a>
+
+                        <div>
+
+
+
+                                <a href="{{ route('register') }}" class="btn btn-secondary">Register</a>
+
+                        </div>
+
+                </div>
+            </nav>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
