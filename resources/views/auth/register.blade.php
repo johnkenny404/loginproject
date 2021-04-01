@@ -37,7 +37,7 @@
       <!--===================Register form section==============-->
       <section id="register">
           <div class="container">
-          <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
             <div class="d-flex flex-column py-4 justify-content-center align-items-center">
             @if ($errors->any())
                 <div class="alert alert-danger">

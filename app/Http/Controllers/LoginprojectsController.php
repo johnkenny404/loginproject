@@ -32,7 +32,9 @@ class LoginprojectsController extends Controller
      */
     public function create()
     {
-        return view ('loginprojects.create');
+        $user = auth()->user();
+        return view ('loginprojects.create', compact('user'));
+
     }
 
     /**
@@ -94,7 +96,7 @@ class LoginprojectsController extends Controller
      */
     public function edit($id)
     {
-        $loginproject = loginproject::find($id)->first();
+        $loginproject = loginproject::find($id);
 
         return view('loginprojects.edit')->with('loginproject', $loginproject);
     }
@@ -109,6 +111,15 @@ class LoginprojectsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            "fullname" => "required",
+            "age" => "required|integer|min:0",
+            "location" => "required|string",
+            "experience" => "required|integer|min:0",
+            "degree" => "required|string",
+            "image" => "required|mimes:jpg,png,jpeg|max:1999"
+            ]);
+
         $newImageName = time(). '-'. $request->name. '.'.
         $request->image->extension();
 
@@ -123,7 +134,7 @@ class LoginprojectsController extends Controller
                 'location' => $request->input('location'),
                 'experience' => $request->input('experience'),
                 'degree' => $request->input('degree'),
-                'image_path' => $newImageName
+                'image_path' => $newImageName,
         ]);
 
         return redirect('/loginprojects');

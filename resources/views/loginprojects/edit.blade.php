@@ -30,19 +30,14 @@
                 <form action="/loginprojects/{{$loginproject -> id}}" method="POST" class="formlogin"  enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-                @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
+
                     <h1 class="heading">Update Bio-Data</h1>
                     <div class="form-group">
                         <labeb>Upload Images</label>
                         <input type="file" name="image" value="{{ $loginproject -> image_path}}" class="mt-2 font-weight-bold">
+                        @error('image')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                      @enderror
                     </div>
                     <div class="form-group">
                         <label for="fullName">full Name</label>

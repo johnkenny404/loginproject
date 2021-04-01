@@ -46,7 +46,8 @@
                     </div>
                     <div class="form-group">
                         <label for="fullName">full Name</label>
-                        <input type="text" name="fullname" placeholder="Enter Full Name" class="form-control">
+                        <input type="text" name="fullname" placeholder="Enter Full Name"
+                        value="{{ $user->name }}" class="form-control">
                         @error('fullname')
                           <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
